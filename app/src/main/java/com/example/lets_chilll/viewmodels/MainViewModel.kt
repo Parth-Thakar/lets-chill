@@ -15,14 +15,17 @@ class MainViewModel (private val repository: BeerRepository) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) { repository.getBeer() }
     }
 
+    // function to expose the randombeerdata livedata.
     fun getRandomBeerData()
     {
         viewModelScope.launch(Dispatchers.IO) { repository.getRandomBeer() }
     }
 
+    // Exposed livedata for the allBeer UI
     val beers : LiveData<Beers>
     get() = repository.beersData
 
+    // Exposed livedata for the randomBeer UI
     val randomBeer : LiveData<Beers>
     get() = repository.randomBeersData
 

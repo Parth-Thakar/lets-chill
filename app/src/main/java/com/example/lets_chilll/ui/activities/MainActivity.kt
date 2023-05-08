@@ -27,10 +27,9 @@ class MainActivity : AppCompatActivity() {
         val repository = BeerRepository(beerApiService)
         mainViewModel = ViewModelProvider(this,MainViewModelFactory(repository)).get(MainViewModel::class.java)
 
+        //Navigation bottomsheet setup using navigation.
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentSpace)
-
         val navController = navHostFragment!!.findNavController()
-
         val popupmenu = PopupMenu(this, null)
         popupmenu.inflate(R.menu.bottom_nav_menu)
         binding.bottomBar.setupWithNavController(popupmenu.menu, navController)

@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Let's Chill"
+        android:text="@string/let_s_chill"
         android:fontFamily="@font/montserrat_medium"
         android:textAlignment="center"
         android:textColor="@color/black"

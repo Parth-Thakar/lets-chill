@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.lets_chilll.repository.BeerRepository
 import java.security.PrivilegedAction
 
+// mainviewmodel factory class to create the paramitarized constructor of the ViewModel object.
 class MainViewModelFactory(private val beerRepository: BeerRepository) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

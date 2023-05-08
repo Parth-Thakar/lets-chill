@@ -5,6 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object BeerApiHellper {
+    // retrofit builder helper class to create and build the retrofit instance
 
     fun getInstance() : Retrofit{
         return Retrofit.Builder()

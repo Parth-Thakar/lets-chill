@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_weight="70"
-            android:text="Favourite  Beers !"
+            android:text="@string/favourite_beers"
             android:textColor="@color/black"
             android:textSize="40sp"
             android:textStyle="bold" />

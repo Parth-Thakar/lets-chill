@@ -2,6 +2,7 @@ package com.example.lets_chilll.models
 
 import java.io.Serializable
 
+// Beers Item
 data class BeersItem(
     val abv: Double,
     val attenuation_level: Double,

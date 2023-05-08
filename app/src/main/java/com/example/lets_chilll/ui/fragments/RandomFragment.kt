@@ -34,17 +34,18 @@ class RandomFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRandomBinding.inflate(layoutInflater)
 
-
         var list : Beers
-
         list = Beers()
 
+        //getting the list of random beer data.
         mainViewModel.getRandomBeerData()
 
+        // getting the data of random beer from the api end point.
         mainViewModel.randomBeer.observe(viewLifecycleOwner){
             list = it
         }
 
+        // Handler to delay the setup by 2.5 second
         Handler().postDelayed({
             binding.randomAnimation.visibility = GONE
             binding.randomCard.visibility = VISIBLE

@@ -3,4 +3,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="let_s_explore_beers">Let\'s Explore Beers !</string>
+    <string name="beer_image">beerImage</string>
+    <string name="share_your_beer">\"Share your Beer :) \"</string>
+    <string name="whatsapp_error">Whatsapp is not installed ! Using another application</string>
+    <string name="watchlist">watchList</string>
+    <string name="whatsapp_errorr">Whatsapp is not installed ! Using another application</string>
+    <string name="let_s_chill">Let\'s Chill</string>
+    <string name="first_brewed">First Brewed :</string>
+    <string name="let_s_grab_and_chill">Let\'s Grab and Chill</string>
+    <string name="kingfisher_beer">KingFisher Beer</string>
+    <string name="share_now">Share now</string>
+    <string name="let_s">Let\'s</string>
+    <string name="chill">Chill</string>
+    <string name="kingfisher">KingFisher</string>
+    <string name="let_s_chill_let_s_chill">Let\'s Chill Let\'s Chill</string>
+    <string name="food_pairing">Food Pairing :</string>
+    <string name="food_pairing_">Food Pairing :</string>
+    <string name="description">Description :</string>
+    <string name="main_beer_hun">Main Beer Hun</string>
+    <string name="kingfisher_beer_">KingFisher Beer</string>
+    <string name="let_s_grab_and_chill_">Let\'s Grab and Chill</string>
+    <string name="first_brewed_">First Brewed :</string>
+    <string name="favourite_beers">Favourite Beers !</string>
 </resources>

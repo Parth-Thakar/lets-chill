@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.lets_chilll.R
 import com.example.lets_chilll.adapters.BeerAdapter
 import com.example.lets_chilll.databinding.FragmentSavedBinding
 import com.example.lets_chilll.models.Beers
@@ -68,13 +69,14 @@ class SavedFragment : Fragment(), BeerAdapter.Share {
     // simple process to reading the data from the sharedprefrences.
     private fun readData() {
         val sharedPreferences =
-            requireContext().getSharedPreferences("watchList", Context.MODE_PRIVATE)
+            requireContext().getSharedPreferences(getString(R.string.watchlist), Context.MODE_PRIVATE)
         val gson = Gson()
-        val json = sharedPreferences.getString("watchList", ArrayList<String>().toString())
+        val json = sharedPreferences.getString(getString(R.string.watchlist), ArrayList<String>().toString())
         val type = object : TypeToken<ArrayList<String>>() {}.type
         watchList = gson.fromJson(json, type)
     }
 
+    // Share the beer data item to whatsapp.
     override fun shareBeer(item: BeersItem) {
         try {
             val intent = Intent(Intent.ACTION_SEND)
@@ -88,7 +90,7 @@ class SavedFragment : Fragment(), BeerAdapter.Share {
         }
         catch (exp : java.lang.Exception)
         {
-            Toast.makeText(requireContext(),"Whatsapp is not installed ! Using another application",
+            Toast.makeText(requireContext(),getString(R.string.whatsapp_errorr),
                 Toast.LENGTH_SHORT).show()
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(

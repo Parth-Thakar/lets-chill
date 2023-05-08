@@ -9,6 +9,7 @@ import com.example.lets_chilll.retrofit.BeerApi
 class BeerRepository(private val beerApi : BeerApi) {
 
 
+    // setting up the exposed LiveData.
     private val beerLiveData = MutableLiveData<Beers>()
 
     val beersData : LiveData<Beers>
@@ -19,6 +20,7 @@ class BeerRepository(private val beerApi : BeerApi) {
     val randomBeersData : LiveData<Beers>
         get() = randomBeerLiveData
 
+    // Suspend function to get the all the beer product.
     suspend fun getBeer(){
         val result = beerApi.getBeers()
         if(result?.body() != null)
@@ -27,6 +29,7 @@ class BeerRepository(private val beerApi : BeerApi) {
         }
     }
 
+    // Suspend function to get the Random beer product.
     suspend fun getRandomBeer()
     {
         val randomBeer = beerApi.getRandomBeers()
