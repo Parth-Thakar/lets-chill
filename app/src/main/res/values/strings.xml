@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Lets_Chilll</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="let_s_explore_beers">Let\'s Explore Beers !</string>
 </resources>
