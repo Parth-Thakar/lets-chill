@@ -8,7 +8,6 @@ import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lets_chilll.R
 import com.example.lets_chilll.adapters.BeerAdapter
 import com.example.lets_chilll.databinding.FragmentHomeBinding
 import com.example.lets_chilll.viewmodels.MainViewModel
@@ -33,6 +32,11 @@ class HomeFragment : Fragment() {
             binding.productListRecyclerView.adapter = BeerAdapter(requireContext(),it)
             binding.spinKitViewHome.visibility = GONE
         }
+
+//        binding.welcomeTextView.setOnClickListener{
+//            val fragment = BottomSheetFragment()
+//            fragment.show(requireActivity().supportFragmentManager,fragment.tag)
+//        }
 
         return binding.root
     }

@@ -1,5 +1,7 @@
 package com.example.lets_chilll.models
 
+import java.io.Serializable
+
 data class BeersItem(
     val abv: Double,
     val attenuation_level: Double,
@@ -22,4 +24,13 @@ data class BeersItem(
     val target_fg: Int,
     val target_og: Double,
     val volume: Volume
-)
+) : Serializable
+{
+    override fun hashCode(): Int {
+        var result = id.hashCode()
+        if(image_url.isNullOrEmpty()){
+            result = 31 * result + image_url.hashCode()
+        }
+        return result
+    }
+}

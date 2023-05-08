@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="divider" type="id" />
+    <item name="rounded_bg" type="id" />
+    <item name="iv_item" type="id" />
+    <item name="tv_item_name" type="id" />
+    <item name="btn_fav" type="id" />
+</resources>
