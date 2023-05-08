@@ -24,7 +24,11 @@
         android:id="@+id/savedFragment"
         android:name="com.example.lets_chilll.ui.fragments.SavedFragment"
         android:label="fragment_saved"
-        tools:layout="@layout/fragment_saved" />
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_savedFragment_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
     <dialog
         android:id="@+id/bottomSheetFragment"
         android:name="com.example.lets_chilll.ui.fragments.BottomSheetFragment"

@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="15dp"
-                android:layout_weight="40"
+                android:layout_weight="25"
                 android:text="KingFisher Beer"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="15dp"
-                android:layout_weight="40"
+                android:layout_weight="20"
                 android:text="Let's Grab and Chill "
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -82,13 +82,22 @@
                 android:id="@+id/beerYear"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="40dp"
                 android:layout_weight="20"
                 android:text="First Brewed : "
                 android:textAlignment="center"
                 android:textColor="@color/mainyellow"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/shareWhatsapp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/circle"
+                android:elevation="14dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/whatsapp" />
 
 
         </LinearLayout>
