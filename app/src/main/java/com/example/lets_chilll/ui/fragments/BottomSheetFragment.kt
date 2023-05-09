@@ -54,23 +54,36 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         // Functionality of Share Button in detail Fragment, Using Implicit Intent
         binding.btnShare.setOnClickListener {
-            val drawable: BitmapDrawable = binding.ivItem.drawable as BitmapDrawable
-            val bitmap: Bitmap = drawable.bitmap
-            val bitmapPath: String = MediaStore.Images.Media.insertImage(
-                activity?.applicationContext?.contentResolver,
-                bitmap,
-                getString(R.string.beer_image),
-                null
-            )
-            val uri: Uri = Uri.parse(bitmapPath)
-            val intent = Intent(Intent.ACTION_SEND)
-            intent.setType("image/png")
-            intent.putExtra(Intent.EXTRA_STREAM, uri)
-            intent.putExtra(
-                Intent.EXTRA_TEXT,
-                "Checkout this Beer : ${data.name} \n Tagline : ${data.tagline} \n Description : ${data.description}"
-            )
-            startActivity(Intent.createChooser(intent, getString(R.string.share_your_beer)))
+            try {
+                val drawable: BitmapDrawable = binding.ivItem.drawable as BitmapDrawable
+                val bitmap: Bitmap = drawable.bitmap
+                val bitmapPath: String = MediaStore.Images.Media.insertImage(
+                    activity?.applicationContext?.contentResolver,
+                    bitmap,
+                    getString(R.string.beer_image),
+                    null
+                )
+                val uri: Uri = Uri.parse(bitmapPath)
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.setType("image/png")
+                intent.putExtra(Intent.EXTRA_STREAM, uri)
+                intent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    "Checkout this Beer : ${data.name} \n Tagline : ${data.tagline} \n Description : ${data.description}"
+                )
+                startActivity(Intent.createChooser(intent, getString(R.string.share_your_beer)))
+            }
+
+            catch (exp : java.lang.Exception)
+            {
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    "Checkout this Beer : ${data.name} \n Tagline : ${data.tagline} \n Description : ${data.description}"
+                )
+                intent.type = "text/plain"
+                startActivity(intent)
+            }
         }
 
 
@@ -101,6 +114,10 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                 intent.type = "text/plain"
                 startActivity(intent)
             }
+        }
+
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressed()
         }
 
         return binding.root
@@ -152,12 +169,11 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     // simple process to creating and storing data inside the sharedprefrence.
     private fun storeData() {
         val sharedPreferences =
-            requireContext().getSharedPreferences(getString(R.string.watchlist), Context.MODE_PRIVATE)
+            requireContext().getSharedPreferences(getString(com.example.lets_chilll.R.string.watchlist), Context.MODE_PRIVATE)
         val gson = Gson()
         val editor = sharedPreferences.edit()
         val json = gson.toJson(watchList)
-        editor.putString(getString(R.string.watchlist), json)
-        Log.e("parth", "${watchList.toString()}")
+        editor.putString(getString(com.example.lets_chilll.R.string.watchlist), json)
         editor.apply()
     }
 
@@ -169,5 +185,9 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         val json = sharedPreferences.getString(getString(R.string.watchlist), ArrayList<String>().toString())
         val type = object : TypeToken<ArrayList<String>>() {}.type
         watchList = gson.fromJson(json, type)
+    }
+
+    override fun getTheme(): Int {
+        return R.style.CustomBottomSheetDialog
     }
 }
