@@ -13,7 +13,7 @@ A store Android application which fetch the Beer list data from https://punkapi.
 
 Demo Video of the Application :
 
-https://drive.google.com/file/d/1jN93RQ2ee5Gji1aqWy9v6TO-3xhBMwV-/view?usp=share_link
+https://drive.google.com/file/d/1G9WunXqPSA_Frh1uSQCDYjK-6yz_EJ1y/view?usp=share_link
 
 
 ## Features
